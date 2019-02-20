@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: silver;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto; /* Aligner la table au milieu de form*/
+}
+
+
+#section_comment {
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+}
