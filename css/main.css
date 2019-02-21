@@ -11,6 +11,58 @@ table {
 
 #section_comment {
     display: flex;
-    background-color: red;
+    /* background-color: red; */
     flex-direction: column;
+}
+
+#divButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.div_img {
+    padding:10px;
+}
+.imgLike {
+    height: 50px;
+    cursor: pointer;
+}
+
+.button_notClicked {
+    
+    background-color: white;
+    
+}
+
+.button_clicked_like {
+    background-color: blue;
+}
+.button_clicked_dislike {
+    background-color: red;
+}
+#divLikeTxt {
+    height: 50px;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.commentDivParent {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin : 0;
+}
+.commentDiv0 {
+    padding: 0;
+    margin : 0;
+    background-color: rgb(23, 24, 26);
+}
+
+.commentDiv1 {
+    padding: 0;
+    margin : 0;
+    background-color: rgb(60, 63, 68);
 }
