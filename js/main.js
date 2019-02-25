@@ -80,6 +80,7 @@ function sendLike(leLike) {
             /////// update du compteur de like
             var compteur = document.getElementById('divLikeTxt')
             var compteurVal = (Number(compteur.innerHTML) + Number(leLike))
+           
             compteur.innerHTML = compteurVal
             
         }

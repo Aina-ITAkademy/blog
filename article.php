@@ -36,7 +36,9 @@
                     <img src="img/dislike.png"  id='buttonDislike'  class='imgLike button_notClicked' onclick='ajaxLike(this)'>
                 </div>
                 <div id='divLikeTxt'>
+                    
                     <?php
+                        // ecrire le nombre de like actuel
                         include_once('./phpscript/loadLike.php');
                     ?>
                 </div>
@@ -46,19 +48,18 @@
 
     <section id="section_comment">
         <div id="userForm">
-        
-                <table>
-                    <tr>
-                        <td>
-                            <textarea name="TextComment" id="TextComment" cols="100" rows="10"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <input type="submit" value="ok" onclick="ajaxComment();">
-                        </td>
-                    </tr>
-                </table>
+            <table>
+                <tr>
+                    <td>
+                        <textarea name="TextComment" id="TextComment" cols="100" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <input type="submit" value="ok" onclick="ajaxComment();">
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="commentDivParent" class="commentDivParent">
             <div id="c1Ex" class="commentDiv0">
@@ -73,7 +74,6 @@
             </div>
 
                         
-
             <!-- Ajout des commentaires deja dans la bdd-->
             <?php
                 include_once('./phpscript/loadComment.php');
