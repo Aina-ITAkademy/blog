@@ -1,0 +1,46 @@
+-- Adminer 4.7.1 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `Article`;
+CREATE TABLE `Article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Article` (`id`, `title`, `content`) VALUES
+(1,	'Un premier article',	'Article de base\r\nCette article à été ajouté en premier à la base de donnée manuellement.\r\n\r\nFin de l\'article.'),
+(2,	'Hi',	'another article'),
+(3,	'12',	'azerty'),
+(62,	'Hello23é',	'wxcvbn'),
+(63,	'Hello23é',	'wxcvbn');
+
+DROP TABLE IF EXISTS `Article_Like`;
+CREATE TABLE `Article_Like` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `totalLike` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Article_Like` (`id`, `totalLike`) VALUES
+(1,	5);
+
+DROP TABLE IF EXISTS `commentaire`;
+CREATE TABLE `commentaire` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_content` date NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `commentaire` (`id`, `date_content`, `content`) VALUES
+(2,	'2019-02-20',	'Ceci est le 1er commentaire de test'),
+(10,	'2019-02-21',	'nouveau comment2'),
+(24,	'2019-02-21',	'allo');
+
+-- 2019-02-25 15:35:15
