@@ -6,44 +6,28 @@
     <title>Page des Articles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/articles_main.css" />
+    <script src="js/main_article.js"></script>
 </head>
 <body>
+
     <!-- Creation d'article -->
-    <h2> Ajouter un article </h2>
-    <table id="table_article"  >
-        <tr>
-            <td> titre </td> 
-            <td> 
-            <input type="text" id="article_title" name="article_title" 
-                 size="50" placeholder="Titre de l'article">
-            </td>
-        </tr>
+    <div id="divArticle_Add">
+        <h2> Ajouter un article </h2>
+        <?php 
+            include_once('view/articles_create_table.php');
+        ?>
+    </div>
 
-        <tr>
-            <td> 
-                content
-            </td>
-            <td>
-                <textarea id="article_content" name="article_content"
-                    rows="20" cols="60">
-                    
-                </textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>  
+    <!-- Ajout d'article -->
+    <div id="mainDiv_Article">
+        <h2> Liste des articles </h2>
+        <div id="div_article_list">
+            <?php
+                include_once('view/article_list.php');
+            ?>
+        </div>
 
-            
-            <td>
-                <button type="button" id="button_addArticle">Ajouter</button> 
-                <button type="button" id="button_updateArticle">Update</button> 
-            </td>
-        </tr>
-
-    </table>
-
-    <h2> Liste des articles </h2>
+    </div>
 </body>
 </html>

@@ -1,10 +1,11 @@
 <?php
+include_once('config.php');
 function cnx_db(){
-    $namehost = 'localhost';
-    $dbname = 'Blog_DB';
-    $user = 'root';
-    $password = '0000';
-    $charset = 'utf8';
+    $namehost = NAMEHOST;
+    $dbname = DBNAME;
+    $user = USER;
+    $password = PASSWORD;
+    $charset = CHARSET;
 
     $DNS = 'mysql:host='.$namehost.';dbname='.$dbname.';charset=utf8';
 
