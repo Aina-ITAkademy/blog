@@ -20,8 +20,8 @@
 
         //Construction de div
         //$did = '<div>'.$id.'</div>';
-        $dnom = '<div>'.$nom.'</div>';
-        $dprenom = '<div>'.$prenom.'</div>';
+        $dnom = '<div class="DivNomStyle">'.$nom.'</div>';
+        $dprenom = '<div class="DivPrenomStyle">'.$prenom.'</div>';
         //$demail = '<div>'.$email.'</div>';
         $demail = '';
         $dBVoir = '<div>'.$buttonVoir.'</div>';

@@ -19,6 +19,41 @@ body {
 }
 
 #DivUserList {
+    
     display: flex;
     flex-direction: column;
+    padding: 0px;
+}
+#DivUserList div {
+    
+    height: 100%;
+    margin: 0px;
+}
+.UserDiv div {
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    flex-direction: center;
+    
+    height: 100%;
+    padding:10px;
+    margin:0px;
+}
+.DivPrenomStyle {
+    /* background-color: aqua; */
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DivNomStyle {
+    min-width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    
 }

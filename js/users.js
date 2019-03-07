@@ -20,10 +20,12 @@ function ajouter_User() {
 
             //Creer le Div et ses sous div nom,prenom (et email ?)
             var DivNom = document.createElement("div")
+            DivNom.classList.add("DivNomStyle");
             var DivNomTxt = document.createTextNode(User_nom)
             DivNom.appendChild(DivNomTxt)
             var DivPrenom = document.createElement("div")
             var DivPrenomTxt = document.createTextNode(User_prenom)
+            DivPrenom.classList.add("DivPrenomStyle");
             DivPrenom.appendChild(DivPrenomTxt)
             var DivEmail = document.createElement("div")
             var DivEmailTxt = document.createTextNode(User_email)
@@ -140,9 +142,11 @@ function modifier_User(id) {
                 //Creer le Div et ses sous div nom,prenom (et email ?)
                 var DivNom = document.createElement("div")
                 var DivNomTxt = document.createTextNode(User_nom)
+                DivNom.classList.add("DivPrenomStyle");
                 DivNom.appendChild(DivNomTxt)
                 var DivPrenom = document.createElement("div")
                 var DivPrenomTxt = document.createTextNode(User_prenom)
+                DivPrenom.classList.add("DivPrenomStyle");
                 DivPrenom.appendChild(DivPrenomTxt)
                 var DivEmail = document.createElement("div")
                 var DivEmailTxt = document.createTextNode(User_email)
