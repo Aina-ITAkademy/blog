@@ -8,7 +8,7 @@
         $email=$user['email'];
         $buttonModify = '<button type="button" onclick="modifier_User('.$id.')">Modifier</button> ';
         $buttonDelete= '<button type="button" onclick="supprimer_User('.$id.')">Supprimer</button> ';
-
+        $buttonVoir= '<button type="button" onclick="voir_User('.$id.')">Voir</button> ';
         // Construction de la ligne du tableau
         // $tid = '<td>'.$id.'</td>';
         // $tnom = '<td>'.$nom.'</td>';
@@ -22,10 +22,13 @@
         //$did = '<div>'.$id.'</div>';
         $dnom = '<div>'.$nom.'</div>';
         $dprenom = '<div>'.$prenom.'</div>';
-        $demail = '<div>'.$email.'</div>';
+        //$demail = '<div>'.$email.'</div>';
+        $demail = '';
+        $dBVoir = '<div>'.$buttonVoir.'</div>';
         $dBModify =  '<div>'.$buttonModify.'</div>';
         $dBDelete = '<div>'.$buttonDelete.'</div>';
-        $divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$demail.$dBModify.$dBDelete.'</div>';
+        //$divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$demail.$dBModify.$dBDelete.'</div>';
+        $divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$dBVoir.$dBModify.$dBDelete.'</div>';
         $stringOut =$divUser; 
         echo $stringOut;
     }
