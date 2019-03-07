@@ -10,17 +10,19 @@
             $this->_id = $id;
             $this->_title = $title;
             $this->_content = $content;
+            
         }
         public function  getid() {
-            return $this->id;
+            echo "this is the id";
+            return $this->_id;
         }
 
         public function  gettitle() {
-            return $this->title;
+            return $this->_title;
         }
 
         public function getcontent() {
-            return $this->content;
+            return $this->_content;
         }
 
         public function setid($id) {
@@ -34,5 +36,7 @@
         }
     }
 
-    $test = new Article('1','2','3');
+    // $test = new Article('10','2','3');
+    // $out = $test->getid();
+    // echo $out;
 ?>
