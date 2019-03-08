@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog Ajax</title>
+    <title>Page Article-Like</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/un_article.css" />
+    <script src="js/un_article.js"></script>
 </head>
 <body>
     <header>
-        <h1>Page article</h1>
+        <h1>Page article avec Like et commentaire</h1>
     </header>
     <section>
         <article>
