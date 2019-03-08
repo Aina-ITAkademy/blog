@@ -23,7 +23,7 @@
         </td>             
         <td>
             <button type="button" id="button_addArticle" onclick='ajouter_Article()'>Ajouter</button> 
-            <button type="button" id="button_updateArticle" onclick="update_Article()">Update</button> 
+            <button type="button" id="button_updateArticle" onclick="update_Article(-1)">Update</button> 
         </td>
     </tr>
 </table>
