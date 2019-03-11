@@ -6,7 +6,7 @@
     // /!\  vers article.loadAll.php est 'php/article.loadAll.php'                /!\  //
     /////////////////////////////////////////////////////////////////////////////////////
 
-    include_once('php/article.loadAll.php'); //
+    include_once('php/article.loadAll.php'); 
     foreach ($articles as $key => $article) {
 
         // Vielle Version Array
