@@ -4,9 +4,9 @@
     $database = cnx_db();
 
     
-    $id = $_POST['id'];
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    $id = htmlspecialchars($_POST['id']);
+    $title = htmlspecialchars($_POST['title']);
+    $content = htmlspecialchars($_POST['content']);
 
     $sql_request = $database->prepare("UPDATE Article SET title=:title,content=:content
                                     WHERE id=:id");

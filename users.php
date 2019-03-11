@@ -36,7 +36,7 @@
                             S'inscrire
                         </button>   
                     </td>
-                    <!-- <td></td> -->
+                    
                 </tr>
             </tbody>
         </table>
@@ -47,25 +47,8 @@
         <h1>Liste des utilisateurs</h1>
         <div id="DivUserList">
             <?php
-                        include_once('view/user_list.php');
-                    ?>
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th>nom</th>
-                        <th>prenom</th>
-                        <th>email</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                      //  include_once('view/user_list.php');
-                    ?>
-                </tbody>
-            </table> -->
-            <!-- <div>Liste utilisateur ici</div> -->
+                include_once('view/user_list.php');
+            ?>
         </div>
     </section>
 </table>

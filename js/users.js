@@ -11,6 +11,7 @@ function ajouter_User() {
 
             //Recuperer les infos
             var User_ID = lastUser[0]['id']
+            var DivID_User_ID = 'div_' + User_ID
             var User_nom = lastUser[0]['nom']
             var User_prenom = lastUser[0]['prenom']
             var User_email = lastUser[0]['email']
@@ -33,7 +34,6 @@ function ajouter_User() {
             var DivBModify = document.createElement("div")
             var BModify= document.createElement("BUTTON")
             var BModify_Txt = document.createTextNode("Modifier")
-            //BModify.onclick=modifier_User(User_ID)
             BModify.setAttribute("onclick","modifier_User"+ID_param)
             BModify.appendChild(BModify_Txt)
             DivBModify.appendChild(BModify)
@@ -56,12 +56,11 @@ function ajouter_User() {
 
             newDivUser.appendChild(DivNom)
             newDivUser.appendChild(DivPrenom)
-            //newDivUser.appendChild(DivEmail)
             newDivUser.appendChild(DivBVoir)
             newDivUser.appendChild(DivBModify)
             newDivUser.appendChild(DivBDelete)
 
-            newDivUser.id = User_ID
+            newDivUser.id = DivID_User_ID
             var DivUser = document.getElementById('DivUserList')
             DivUser.appendChild(newDivUser)
 
@@ -109,7 +108,8 @@ function supprimer_User(id) {
 
     //Effacer dans le dom
     var DivUserList = document.getElementById('DivUserList')
-    DivUserList.removeChild(document.getElementById(id))
+    var DivID_ToDelete = document.getElementById('div_' + id)
+    DivUserList.removeChild(DivID_ToDelete)
 }
 
 function modifier_User(id) {
@@ -121,7 +121,6 @@ function modifier_User(id) {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 //code execute quand le serveur renverra une reponse
                 var lastUser = JSON.parse(xhr.response);
-    
                 
                 //Recuperer les infos
                 var User_ID = lastUser[0]['id']
@@ -171,10 +170,9 @@ function modifier_User(id) {
                 BVoir.appendChild(BVoir_Txt)
                 DivBVoir.appendChild(BVoir)
     
-
-    
                 //Effacer toutes les divs
-                var DivUser = document.getElementById(id)
+                DivUser_ID = "div_" + id
+                var DivUser = document.getElementById(DivUser_ID)
                 while (DivUser.firstChild) {
                     DivUser.removeChild(DivUser.firstChild);
                 }

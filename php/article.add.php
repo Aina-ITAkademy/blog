@@ -4,8 +4,8 @@
     $database = cnx_db();
 
     
-    $article_title = $_POST['article_title'];
-    $article_content = $_POST['article_content'];
+    $article_title = htmlspecialchars($_POST['article_title']);
+    $article_content = htmlspecialchars($_POST['article_content']);
 
  
     $sql_request = $database->prepare("INSERT INTO Article(title,content)

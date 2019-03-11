@@ -11,7 +11,7 @@
         $buttonVoir= '<button type="button" onclick="voir_User('.$id.')">Voir</button> ';
 
         //Construction de div
-        //$did = '<div>'.$id.'</div>';
+        $did = 'div_'.$id;
         $dnom = '<div class="DivNomStyle">'.$nom.'</div>';
         $dprenom = '<div class="DivPrenomStyle">'.$prenom.'</div>';
         //$demail = '<div>'.$email.'</div>';
@@ -20,7 +20,7 @@
         $dBModify =  '<div>'.$buttonModify.'</div>';
         $dBDelete = '<div>'.$buttonDelete.'</div>';
         //$divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$demail.$dBModify.$dBDelete.'</div>';
-        $divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$dBVoir.$dBModify.$dBDelete.'</div>';
+        $divUser = '<div id="'.$did.'" class="UserDiv">'.$dnom.$dprenom.$dBVoir.$dBModify.$dBDelete.'</div>';
         $stringOut =$divUser; 
         echo $stringOut;
     }

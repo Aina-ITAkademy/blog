@@ -3,16 +3,12 @@
     include_once('../model/User.php');
     $database = cnx_db();
     
-    $id = $_POST['id'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-
-    //UPDATE Users SET nom='Nary',prenom='aina',email='nary.aina@gmail.com'
-    //WHERE id=72;
+    $id = htmlspecialchars($_POST['id']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $email = htmlspecialchars($_POST['email']);
 
 
-    // INSERT INTO Users(nom,prenom,email) VALUES ('test','unTest','testmai@terst');
     $sql_request = $database->prepare("UPDATE Users SET nom=:nom,prenom=:prenom,email=:email
                                     WHERE id=:id");
 
