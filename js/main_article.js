@@ -117,7 +117,7 @@ function supprimer_Article(id){
 
         }
     }
-    xhr.open('POST','controller/deleteArticle.php')
+    xhr.open('POST','php/article.delete.php')
     var dataToSend = new FormData();
     dataToSend.append('id',divid);
     xhr.send(dataToSend)

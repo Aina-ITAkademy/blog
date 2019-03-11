@@ -1,8 +1,13 @@
 <?php
-    include_once('php/loadArticle.php');
-    foreach ($articles as $key => $article) {
-        //$stringToEcho = 'id : '.$article['id'].'<br>title :'.$article['title'].'<br>content : '.$article['content'].'<br>';
+    /////////////////////////////////////////////////////////////////////////////////////
+    // /!\  Erreur malgres emplacement si on utilise '../php/article.loadAll.php' /!\  //
+    // /!\  ce fichier article_list.php est "include_once() par articles.php      /!\  //
+    // /!\  article.php est a la racine, donc le bon chemin                       /!\  //
+    // /!\  vers article.loadAll.php est 'php/article.loadAll.php'                /!\  //
+    /////////////////////////////////////////////////////////////////////////////////////
 
+    include_once('php/article.loadAll.php'); //
+    foreach ($articles as $key => $article) {
 
         $id =$article['id'];
         $title=$article['title'];

@@ -40,8 +40,7 @@ function ajaxComment() {
     }
     
     // 3) ouverture requete AJAX
-    //xhr.open('POST','http://192.168.33.10/blog/php/postcomment.php') // mettre l'adresse  du script php
-    xhr.open('POST','php/postComment.php')
+    xhr.open('POST','php/comment.send.php')
 
     // 4) envoyer la requete
     //preparer les donnees (date et commentaire)
@@ -87,7 +86,7 @@ function sendLike(leLike) {
     }
 
     // 3) ouverture requete AJAX
-    xhr.open('POST','php/sendLike.php')
+    xhr.open('POST','php/like.send.php')
 
     // 4) envoyer la requete
     //preparer les donnees (le Like/dislike)

@@ -39,7 +39,7 @@
                     
                     <?php
                         // ecrire le nombre de like actuel
-                        include_once('./php/loadLike.php');
+                        include_once('./php/like.load.php');
                     ?>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                         
             <!-- Ajout des commentaires deja dans la bdd-->
             <?php
-                include_once('./php/loadComment.php');
+                include_once('./php/comment.load.php');
 
                 // classNum et classChange controlent la class des commentaires recuperees
                 

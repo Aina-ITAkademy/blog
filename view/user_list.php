@@ -1,5 +1,12 @@
 <?php
-    include_once('php/loadUsers.php');
+    /////////////////////////////////////////////////////////////////////////////////
+    // /!\  Erreur malgres emplacement si on utilise '../php/loadArticle.php' /!\  //
+    // /!\  ce fichier article_list.php est "include_once() par articles.php  /!\  //
+    // /!\  article.php est a la racine, donc le bon chemin vers loadArticle  /!\  //
+    // /!\  est 'php/loadArticle.php'                                         /!\  //
+    /////////////////////////////////////////////////////////////////////////////////
+
+    include_once('php/user.loadAll.php');
     foreach ($users as $key => $user) {
 
         $id =$user['id'];
@@ -14,12 +21,10 @@
         $did = 'div_'.$id;
         $dnom = '<div class="DivNomStyle">'.$nom.'</div>';
         $dprenom = '<div class="DivPrenomStyle">'.$prenom.'</div>';
-        //$demail = '<div>'.$email.'</div>';
-        $demail = '';
+        
         $dBVoir = '<div>'.$buttonVoir.'</div>';
         $dBModify =  '<div>'.$buttonModify.'</div>';
         $dBDelete = '<div>'.$buttonDelete.'</div>';
-        //$divUser = '<div id="'.$id.'" class="UserDiv">'.$dnom.$dprenom.$demail.$dBModify.$dBDelete.'</div>';
         $divUser = '<div id="'.$did.'" class="UserDiv">'.$dnom.$dprenom.$dBVoir.$dBModify.$dBDelete.'</div>';
         $stringOut =$divUser; 
         echo $stringOut;

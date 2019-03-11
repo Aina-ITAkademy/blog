@@ -16,11 +16,7 @@
     $sql_request->bindParam(':email',$email,PDO::PARAM_STR);
     $sql_request->execute();
 
-    //recuperer le dernier ajout
-
-    //$sql_request = $database->prepare("SELECT LAST_INSERT_ID();");
-
-
+    //recuperer et envoyer le dernier ajout
     $sql_request = $database->prepare("SELECT * FROM Users WHERE ID=LAST_INSERT_ID();");
     $sql_request->setFetchMode(PDO::FETCH_CLASS,'User');
     $sql_request->execute();

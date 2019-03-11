@@ -1,5 +1,5 @@
 <?php
-    include_once('../php/connectDB.php');
+    include_once('connectDB.php');
     $database = cnx_db();
 
     $id= $_POST['id'];
