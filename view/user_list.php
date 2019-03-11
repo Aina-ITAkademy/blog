@@ -9,14 +9,6 @@
         $buttonModify = '<button type="button" onclick="modifier_User('.$id.')">Modifier</button> ';
         $buttonDelete= '<button type="button" onclick="supprimer_User('.$id.')">Supprimer</button> ';
         $buttonVoir= '<button type="button" onclick="voir_User('.$id.')">Voir</button> ';
-        // Construction de la ligne du tableau
-        // $tid = '<td>'.$id.'</td>';
-        // $tnom = '<td>'.$nom.'</td>';
-        // $tprenom = '<td>'.$prenom.'</td>';
-        // $temail = '<td>'.$email.'</td>';
-        // $tbModify =  '<td>'.$buttonModify.'</td>';
-        // $tbDelete = '<td>'.$buttonDelete.'</td>';
-        // $table_row = '<tr>'.$tnom.$tprenom.$temail.$tbModify.$tbDelete.'</tr>';
 
         //Construction de div
         //$did = '<div>'.$id.'</div>';

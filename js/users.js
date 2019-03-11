@@ -27,9 +27,7 @@ function ajouter_User() {
             var DivPrenomTxt = document.createTextNode(User_prenom)
             DivPrenom.classList.add("DivPrenomStyle");
             DivPrenom.appendChild(DivPrenomTxt)
-            var DivEmail = document.createElement("div")
-            var DivEmailTxt = document.createTextNode(User_email)
-            DivEmail.appendChild(DivEmailTxt)
+
 
             // sous-div du bouton MODIFIER
             var DivBModify = document.createElement("div")
@@ -85,10 +83,6 @@ function ajouter_User() {
     dataToSend.append('prenom',user_prenom);
     dataToSend.append('email',user_email);
     
-    // alert("Donnee recuperée : \n" + 
-    //                         user_nom + "\n" +
-    //                         user_prenom + "\n" +
-    //                         user_email + "\n")
     xhr.send(dataToSend)
 }
 
@@ -128,7 +122,7 @@ function modifier_User(id) {
                 //code execute quand le serveur renverra une reponse
                 var lastUser = JSON.parse(xhr.response);
     
-                console.log(lastUser)
+                
                 //Recuperer les infos
                 var User_ID = lastUser[0]['id']
                 var User_nom = lastUser[0]['nom']
@@ -210,10 +204,6 @@ function modifier_User(id) {
         dataToSend.append('prenom',user_prenom);
         dataToSend.append('email',user_email);
         
-        // alert("Donnee recuperée : \n" + 
-        //                         user_nom + "\n" +
-        //                         user_prenom + "\n" +
-        //                         user_email + "\n")
         xhr.send(dataToSend)
 }
 
@@ -226,7 +216,6 @@ function voir_User(id) {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 // On ne fait rien
                 var User = JSON.parse(xhr.response);
-                console.log(User)
                 // Recuperer les infos
                 var User_ID = User[0]['id']
                 var User_nom = User[0]['nom']

@@ -112,7 +112,7 @@
                     echo "</div>";                
                 endforeach;
             ?> 
-            
+        </div>    
 
     </section>
 </body>
