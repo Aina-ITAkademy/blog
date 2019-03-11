@@ -9,9 +9,16 @@
     include_once('php/article.loadAll.php'); //
     foreach ($articles as $key => $article) {
 
-        $id =$article['id'];
-        $title=$article['title'];
-        $content =$article['content'];
+        // Vielle Version Array
+        // $id =$article['id'];
+        // $title=$article['title'];
+        // $content =$article['content'];
+
+        //Version objet
+        $id = $article -> id;
+        $title = $article -> title;
+        $content = $article -> content;
+
         $buttonModify = '<button type="button" onclick="modifier_Article('.$id.')">M</button> ';
         $buttonDelete= '<button type="button" onclick="supprimer_Article('.$id.')">S</button> ';
 

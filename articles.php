@@ -6,8 +6,8 @@
     <title>Page des Articles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/un_article.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/articles_main.css" />
-    <script src="js/main_article.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/articles.css" />
+    <script src="js/articles.js"></script>
 </head>
 <body>
 

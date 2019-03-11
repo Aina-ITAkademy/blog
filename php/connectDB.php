@@ -10,6 +10,8 @@ function cnx_db(){
     $DNS = 'mysql:host='.$namehost.';dbname='.$dbname.';charset=utf8';
 
     $database = new PDO($DNS, $user, $password);
+    
+    $database->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); 
     return $database;
 }
 ?>

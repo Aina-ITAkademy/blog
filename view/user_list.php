@@ -7,12 +7,20 @@
     /////////////////////////////////////////////////////////////////////////////////
 
     include_once('php/user.loadAll.php');
+
     foreach ($users as $key => $user) {
 
-        $id =$user['id'];
-        $nom=$user['nom'];
-        $prenom =$user['prenom'];
-        $email=$user['email'];
+        // Vielle version avec une reponse en array
+        // $id =$user['id'];
+        // $nom=$user['nom'];
+        // $prenom =$user['prenom'];
+        // $email=$user['email'];
+
+        //Version objet
+        $id = $user -> id;
+        $nom = $user -> nom;
+        $prenom = $user -> prenom;
+
         $buttonModify = '<button type="button" onclick="modifier_User('.$id.')">Modifier</button> ';
         $buttonDelete= '<button type="button" onclick="supprimer_User('.$id.')">Supprimer</button> ';
         $buttonVoir= '<button type="button" onclick="voir_User('.$id.')">Voir</button> ';
