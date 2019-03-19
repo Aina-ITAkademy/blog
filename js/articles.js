@@ -91,7 +91,7 @@ function modifier_Article(id) { //pour charger l'article afin qu'il soit update
             }
             
             // 3) ouverture requete AJAX
-            xhr.open('POST','php/article.modifier.php')
+            xhr.open('POST','php/article.load.php')
         
             // 4) envoyer la requete
         

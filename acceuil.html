@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
 
-    <script src="main.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
 </head>
@@ -40,16 +39,17 @@
                         Acceuil
                     </div>
                     <div class="col-4">
-                        lien 1
+                        <a href="articles.php">Page articles </a>
                     </div>
                     <div class="col-4">
-                        lien 2
+                        <a href="users.php">Page users </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    
     <div class="container">
         <div class="jumbotron">
             <h1>Bootstrap Tutorial jumbotron</h1>
@@ -58,9 +58,9 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="card col-12 col-sm-6 col-md-4 " style="width: 18rem;">
+    <div class="container" id="cardContainer">
+        <div class="row no-gutters" id="cardRow">
+            <div id="cardModel" class="card col-12 col-sm-6 col-md-4 " style="width: 18rem;">
                 <img src="img/bgGrise.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="card-footer ">
-                    <div class="container bg-danger">
+                    <div class="container ">
                         <div class="row icon_size1">
                             <div class="col-4 ">
                                 <i class="fas fa-sort"></i>
@@ -153,24 +153,25 @@
         <div class="row justify-content-center">
                 <div class="spinner-border" role="status">
                     <span class="sr-only">Loading...</span>
-                    <span>Loading</span>
+                    <!-- Le texte tourne  avec le spinner... -->
+                    <!-- <span>Loading</span> -->
                 </div>
         </div>
     </div>
 
     <div class="container">
             <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary">Charger les articles</button>
+                <button type="button" class="btn btn-secondary" id="button_loadArticle">Charger les articles</button>
             </div>
         </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="js/acceuil_jQuery.js"></script>
 </body>
 
 </html>
