@@ -31,8 +31,8 @@ function AjaxTestPost() {
 //     })
 // })
 
-$("#button_loadArticle").click(function() {
-    // AjaxTestPost();
+//fonction de test pour charger le 1er article avec id 1
+function loadArticle1() {
     $.post({
         url: "php/acceuil.articles.load.php",
         data: {
@@ -45,25 +45,99 @@ $("#button_loadArticle").click(function() {
             var title = reponse["title"]
             var content = reponse["content"]
             var cardID = 'card' + id
-            // console.log(id)
-            // console.log(title)
-            // console.log(content)
-
+            var cardIDselector = '#' + cardID
             //Recuperer la carte exemple "cardModel"
             var cardClone = $("#cardModel").clone().attr('id', cardID);
 
             $("#cardRow").append(cardClone)
 
             //Charger le contenu dans la carte clone
-            var selectorTitle = '#'+cardID + " h5"
-            var selectorText = '#'+cardID + " p"
+            var selectorTitle = cardIDselector + " h5"
+            var selectorText = cardIDselector + " p"
             $(selectorTitle).text(title)
             $(selectorText).text(content)
 
-                //console.log(element);
-                //Creation de carte par article ici
-                
+            //Enlever le display none
+            $(cardIDselector).removeClass("d-none")
+
+            //changer le onclick du bouton
+
         },
         dataType: "json"   
     })
-})
+}
+
+//Test pour charger les 3 premier article 1 par un
+function loadArticleTest(articleID) {
+    $.post({
+        url: "php/acceuil.articles.load.php",
+        data: {
+            id : articleID
+        },
+        success: function( reponse ) {
+            
+            //Info en reponse
+            var id = reponse["id"]
+            var title = reponse["title"]
+            var content = reponse["content"]
+            clonageCard(id, title, content) 
+
+            //changer le onclick du bouton
+            $("#button_loadArticle").click(function() {loadArticleTest(articleID+1) })
+        },
+        dataType: "json"   
+    })
+}
+
+// Fonction pour cloner et modifier
+function clonageCard(id, title, content) {
+                //Info en reponse
+                var cardID = 'card' + id
+                var cardIDselector = '#' + cardID
+                //Recuperer la carte exemple "cardModel"
+                var cardClone = $("#cardModel").clone().attr('id', cardID);
+    
+                $("#cardRow").append(cardClone)
+    
+                //Charger le contenu dans la carte clone
+                var selectorTitle = cardIDselector + " h5"
+                var selectorText = cardIDselector + " p"
+                $(selectorTitle).text(title)
+                $(selectorText).text(content)
+    
+                //Enlever le display none
+                $(cardIDselector).removeClass("d-none")
+    
+                //changer le onclick du bouton
+                //$("#button_loadArticle").click(function() {loadArticleTest(articleID+1) })
+}
+
+function load3Article(lastID) {
+    $.post({
+        url: "php/acceuil.articles.load.last3.php",
+        data: {
+            id : lastID
+        },
+        success: function( reponse ) {
+            
+            //Traiter chaque carte
+            reponse.forEach(function(article) {
+                clonageCard(article['id'],article['title'],article['content'])
+            });
+
+           //recuperer le dernier id
+           var lastArticle = reponse.pop();
+           var lastID = lastArticle['id']
+           $("#button_loadArticle").click(function() {load3Article(lastID) })
+        },
+        dataType: "json"   
+    })
+}
+
+//$("#button_loadArticle").click(loadArticle1)
+//$("#button_loadArticle").click(function() {loadArticleTest(1) })
+
+
+$("#button_loadArticle").click(function() {load3Article(0) })
+
+
