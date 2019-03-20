@@ -29,5 +29,24 @@
     $sql_request->execute();
     $results = $sql_request ->fetch(); 
     $jsonArticle = json_encode($results);
-    echo $jsonArticle;
+
+    //Envoi reponse
+    //echo $jsonArticle;
+
+
+    /////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
+
+    // $reponse = new SuccessResponse($article_title,true,null);
+   
+
+    // Erreur un ou 2  vide
+    if (($article_title == '') or ($article_content == '')) {
+        $reponse = new FailResponse("C'est pas bon, content ET title ne doivent pas etre vide",false,null);
+    }
+    else {
+        $reponse = new SuccessResponse("C'est bon",true,$results);
+    }
+    echo json_encode($reponse);
+
 ?>
