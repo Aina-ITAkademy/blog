@@ -21,7 +21,7 @@ function clonageCard(id, title, content) {
 }
 
 function load3Articles(lastID) {
-    
+    SpinnerOn()
     $.post({
         url: "php/acceuil.articles.load.last3.php",
         data: {
@@ -43,18 +43,22 @@ function load3Articles(lastID) {
                 var lastID = lastArticle['id']
                 $("#button_loadArticle").click(function() {load3Articles(lastID) })
             }
-            
+           
+            SpinnerOff()
         },
         dataType: "json"   
     })
 }
 
 //trouver comment toogle correctement
-function toogleSpinner() {
-    $("#divSpiner").toggleClass('d-none')
+function SpinnerOff() {
+    $("#divSpiner").addClass('d-none')
+}
+function SpinnerOn() {
+    $("#divSpiner").removeClass('d-none')
 }
 $("#button_loadArticle").click(function() {
-    toogleSpinner()
+   
     load3Articles(0) 
     })
 

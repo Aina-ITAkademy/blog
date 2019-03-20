@@ -7,45 +7,49 @@ function ajouter_Article() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 //code execute quand le serveur renverra une reponse
-                var lastArticle = JSON.parse(xhr.response);
+                var reponse = JSON.parse(xhr.response);
+                if (reponse.success == true) {
+                    var lastArticle = reponse.obj
+                    
+                    //Recuperer les informations et les formater dans outString
+                    var id = lastArticle.id
+                    var title = lastArticle.title
+                    var content = lastArticle.content
+                    var outString = id+'--'+title+'--'+content
 
-                //Recuperer les informations et les formater dans outString
-                var id = lastArticle.id
-                var title = lastArticle.title
-                var content = lastArticle.content
-                var outString = id+'--'+title+'--'+content
+                    var ID_param = '('+id+')' //pour les fonctions onclick des boutons
+                    //Creation du bouton Modifier "M"
+                    var DivBModify = document.createElement("div")
+                    var BModify= document.createElement("BUTTON")
+                    var BModify_Txt = document.createTextNode("M")
+                    BModify.setAttribute("onclick","modifier_Article"+ID_param)
+                    BModify.appendChild(BModify_Txt)
+                    //Creation du bouton Supprimer "S"
+                    var DivBSuppr = document.createElement("div")
+                    var BSuppr= document.createElement("BUTTON")
+                    var BSuppr_Txt = document.createTextNode("S")
+                    BSuppr.setAttribute("onclick","supprimer_Article"+ID_param)
+                    BSuppr.appendChild(BSuppr_Txt)
 
-                var ID_param = '('+id+')' //pour les fonctions onclick des boutons
-                //Creation du bouton Modifier "M"
-                var DivBModify = document.createElement("div")
-                var BModify= document.createElement("BUTTON")
-                var BModify_Txt = document.createTextNode("M")
-                BModify.setAttribute("onclick","modifier_Article"+ID_param)
-                BModify.appendChild(BModify_Txt)
-                //Creation du bouton Supprimer "S"
-                var DivBSuppr = document.createElement("div")
-                var BSuppr= document.createElement("BUTTON")
-                var BSuppr_Txt = document.createTextNode("S")
-                BSuppr.setAttribute("onclick","supprimer_Article"+ID_param)
-                BSuppr.appendChild(BSuppr_Txt)
+                    //Recuperer le div principal des articles et creer le nouveau sous-div
+                    var diVArticle =  document.getElementById('div_article_list');
+                    var divNewArticle = document.createElement("div");
 
-                //Recuperer le div principal des articles et creer le nouveau sous-div
-                var diVArticle =  document.getElementById('div_article_list');
-                var divNewArticle = document.createElement("div");
+                    //Ajouter le text et les 2 bouton dans le nouveau Div
+                    var newContent = document.createTextNode(outString); 
+                    divNewArticle.appendChild(newContent)
+                    divNewArticle.appendChild(BModify)
+                    divNewArticle.appendChild(BSuppr)
 
-                //Ajouter le text et les 2 bouton dans le nouveau Div
-                var newContent = document.createTextNode(outString); 
-                divNewArticle.appendChild(newContent)
-                divNewArticle.appendChild(BModify)
-                divNewArticle.appendChild(BSuppr)
-
-                // Ajouter un id et la class "Article"
-                divNewArticle.id = id
-                divNewArticle.classList.add('Article')
-                // Ajouter le nouveau Div dans la div principal
-                diVArticle.appendChild(divNewArticle);  
-
-                
+                    // Ajouter un id et la class "Article"
+                    divNewArticle.id = id
+                    divNewArticle.classList.add('Article')
+                    // Ajouter le nouveau Div dans la div principal
+                    diVArticle.appendChild(divNewArticle);  
+                }
+                else {
+                    alert(reponse.message)
+                }
             }
         }
         

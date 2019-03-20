@@ -4,8 +4,7 @@ class SuccessResponse extends Response {
     public $obj;
 
     function __construct($message,$success,$obj) {
-        $this->message = $message;
-        $this->success = $success;
+        parent::__construct($message,$success);
         $this->obj = $obj;
     }
 }
