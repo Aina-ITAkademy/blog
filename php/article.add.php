@@ -1,6 +1,10 @@
 <?php
     include_once('connectDB.php');
-    //include_once('../model/Article.php');
+    include_once('../model/Article.php');
+    include_once('../model/Response.php');
+    include_once('../model/FailResponse.php');
+    include_once('../model/SuccessResponse.php');
+
     $database = cnx_db();
 
     
